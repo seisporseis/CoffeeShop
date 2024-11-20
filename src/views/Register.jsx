@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export default function Register() {
   return (
@@ -74,11 +75,15 @@ export default function Register() {
             <input 
               type="submit" 
               value="Crear cuenta"
-              className="bg-amber-300 hover:bg-amber-400 p-3 rounded-full font-bold w-full cursor-pointer"
+              className="bg-amber-300 hover:bg-amber-400 p-3 mt-5 rounded-full font-bold uppercase w-full cursor-pointer shadow-sm"
               />
-
           </form>
         </div>
+        <nav className="mt-5 text-center cursor-pointer underline text-sm font-light text-slate-600 hover:text-slate-950">
+          <Link to="/auth/login">
+            Inicia sesión aquí
+          </Link>
+        </nav>
     </>
   )
 }
