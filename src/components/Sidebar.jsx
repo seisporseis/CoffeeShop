@@ -1,4 +1,4 @@
-import Categorie from './Categorie'
+import Category from './Category'
 import useQuiosco from '../hooks/useQuiosco'
 
 export default function Sidebar() {
@@ -10,13 +10,13 @@ export default function Sidebar() {
                 <img
                 className="w-40"
                 src="/img/logo.svg" 
-                alt="" />
+                alt="imagen categoria" />
             </div>
             <div className="mt-10">
-                {categories.map(categorie => (
-                    <Categorie
-                        key={categorie.id}
-                        categorie={categorie} 
+                {categories.map(category => (
+                    <Category
+                        key={category.id}
+                        category={category} 
                     />
                 ))}
             </div>
