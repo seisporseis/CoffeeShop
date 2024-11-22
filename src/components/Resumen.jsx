@@ -7,13 +7,13 @@ const { pedido } = useQuiosco();
   return (
     <aside className="w-72 h-screen overflow-y-scroll p-5">
       <h1 className='font-bold text-2xl mt-6'>Mi pedido</h1>
-      <p className='text-sm font-extralight py-3'>Revisa tu pedido</p>
       <div className="py-10">
         {pedido.length === 0 ? (
-          <p>No hay pedido</p>
+          <p className="font-lg text-gray-800 font-thin text-center">No hay pedido</p>
         ) : (
           pedido.map(product => (
-            <ResumenProduct 
+            <ResumenProduct
+              key={product.id}
               product={product}
             />
           ))

@@ -13,9 +13,9 @@ export default function Product({product}) {
             src={`/img/${imagen}.jpg`} 
             alt={`imagen ${nombre}`}
             className="w-full rounded-md" />
-        <div className="flex justify-between items-center py-5">
-            <h3 className="font-bold text-sm">{nombre}</h3>
-            <p className="text-amber-500 font-bold text-xl">{moneyFormat(precio)}</p>
+        <div className="py-5">
+            <h3 className="font-bold text-lg">{nombre}</h3>
+            <p className="text-amber-500 font-bold text-xl pt-5">{moneyFormat(precio)}</p>
         </div>
         <button 
             type="button"

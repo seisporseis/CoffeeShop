@@ -5,10 +5,10 @@ export default function ResumenProduct({product}) {
     const { id, nombre, precio, cantidad } = product
 
     return (
-        <div className="shadow space-y-1 p-4 bg-white">
+        <div className="shadow space-y-1 p-4 bg-white rounded-md mb-4">
           <div className="space-y-2">
-            <p className="text-xl font-bold">{nombre}</p>
-            <p className="text-lg font-bold ">Cantidad: {cantidad}</p>
+            <p className="text-lg font-bold">{nombre}</p>
+            <p className="font-bold ">Cantidad: {cantidad}</p>
             <p className="text-lg font-bold text-amber-500">
               Precio:{moneyFormat(precio)}
             </p>
