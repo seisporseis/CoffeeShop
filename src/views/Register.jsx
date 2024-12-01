@@ -38,7 +38,7 @@ export default function Register() {
             onSubmit={handleSubmit}
             noValidate
           >
-            { errores ? errores.map(error => <Alert>{error}</Alert>): null }
+            { errores ? errores.map((error, i) => <Alert key={i}>{error}</Alert>): null }
             <div className="mb-4">
               <label 
                 className="font-bold text-stone-950"

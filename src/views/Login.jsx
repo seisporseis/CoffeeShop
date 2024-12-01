@@ -1,7 +1,7 @@
 import { createRef ,useState } from "react"
 import { Link } from "react-router-dom"
-import clienteAxios from "../config/axios";
 import Alert from "../components/Alert";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Login() {
 
@@ -9,19 +9,19 @@ export default function Login() {
   const passwordRef = createRef();
 
   const [errores, setErrores] = useState([]);
+  const { login } = useAuth({
+    middleware: 'guest',
+    url: '/'
+  });
 
   const handleSubmit = async e => {
     e.preventDefault();
+
     const datos = {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     } 
-    try {
-      const {data} = await clienteAxios.post('/api/login', datos)
-      console.log(data.token)
-    } catch (error) {
-      setErrores(Object.values(error.response.data.errors))
-    }
+    login(datos, setErrores)
   }
 
   return (
@@ -34,7 +34,7 @@ export default function Login() {
         onSubmit={handleSubmit}
         noValidate
       >
-        { errores ? errores.map(error => <Alert>{error}</Alert>): null }
+        { errores ? errores.map((error, i) => <Alert key={i}>{error}</Alert>): null }
         <div className="mb-4">
           <label 
             className="font-bold text-stone-950"
