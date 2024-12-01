@@ -102,7 +102,7 @@ export default function ModalProduct() {
             handleAgregarPedido({ ...product, cantidad });
             handleClickModal();
           }}
-          className="rounded-lg bg-indigo-600 hover:bg-indigo-800 text-white shadow px-5 py-2 mt-5 font-semibold"
+          className="rounded-lg bg-yellow-400 hover:bg-yellow-500 shadow px-5 py-2 mt-5 font-semibold"
         >
           {edit ? "Guardar cambios" : "Añadir al carrito"}
         </button>

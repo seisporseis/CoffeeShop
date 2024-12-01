@@ -5,10 +5,10 @@ export default function Sidebar() {
 
     const {categories} = useQuiosco();
     return (
-        <aside className="w-72">
-            <div className="p-4">
+        <aside className="w-64">
+            <div className=" flex py-6 justify-center items-center">
                 <img
-                className="w-40"
+                className="w-36"
                 src="/img/logo.svg" 
                 alt="imagen categoria" />
             </div>
